@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CalculatorLibrary;
 
 namespace calc
 {
@@ -16,8 +17,8 @@ namespace calc
 
             while (!endApp)
             {
-                string numInput1 = "";
-                string numInput2 = "";
+                string numInput1 = " ";
+                string numInput2 = " ";
                 double result = 0;
 
                 Console.Write("Type a number, and then press Enter: ");
@@ -51,7 +52,7 @@ namespace calc
 
                 try
                 {
-                    result = Calc.DoOperation(cleanNum1, cleanNum2, op);
+                    result = CalculatorLibrary.Calc.DoOperation(cleanNum1, cleanNum2, op);
                     if (double.IsNaN(result))
                     {
                         Console.WriteLine("This operation will result in a mathematical error.\n");

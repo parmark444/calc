@@ -1,6 +1,6 @@
 ﻿class Calc 
 {
-    public static double DoOperation(double x, double y, string operation) 
+    public static double DoOperationLocal(double x, double y, string operation) 
     {
         double result = double.NaN;
         switch (operation) 
