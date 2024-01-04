@@ -1,24 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CalculatorLibrary;
+﻿using CalculatorLibrary;
 
 namespace calc
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             bool endApp = false;
             Console.WriteLine("Console Calc in C#\r");
             Console.WriteLine("------------------------\n");
-
+            Calc calc = new Calc();
             while (!endApp)
             {
-                string numInput1 = " ";
-                string numInput2 = " ";
+                string numInput1 = "";
+                string numInput2 = "";
                 double result = 0;
 
                 Console.Write("Type a number, and then press Enter: ");
@@ -52,16 +47,16 @@ namespace calc
 
                 try
                 {
-                    result = CalculatorLibrary.Calc.DoOperation(cleanNum1, cleanNum2, op);
+                    result = calc.DoOperation(cleanNum1, cleanNum2, op);
                     if (double.IsNaN(result))
                     {
-                        Console.WriteLine("This operation will result in a mathematical error.\n");
+                        Console.WriteLine("operation will result in a mathematical error.\n");
                     }
                     else Console.WriteLine("Your result: {0:0.##}\n", result);
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Oh no! An exception occurred trying to do the math.\n - Details: " + e.Message);
+                    Console.WriteLine("exception occurred trying to do the math.\n - Details: " + e.Message);
                 }
 
                 Console.WriteLine("------------------------\n");
